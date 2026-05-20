@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vritavi Stays | Digital Card</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Georgia", "Times New Roman", serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #f6eadb 0%, #efe1cf 35%, #17120f 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #2b211b;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 450px;
+      background: #fffaf4;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(201, 164, 104, 0.55);
+    }
+
+    .hero {
+      min-height: 330px;
+      background:
+        linear-gradient(to bottom, rgba(20, 15, 12, 0.15), rgba(20, 15, 12, 0.88)),
+        url("https://vritavistays.com/images/rooms/room-2.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo-circle {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: rgba(255, 250, 244, 0.96);
+      color: #6f4e2f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: bold;
+      margin: 0 auto 18px;
+      border: 2px solid #d8b777;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .hero .tagline {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ead3aa;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #f6efe7;
+    }
+
+    .content {
+      padding: 26px 24px 30px;
+      text-align: center;
+    }
+
+    .owner {
+      font-size: 19px;
+      font-weight: bold;
+      color: #3a2a20;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #8a6b45;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+    }
+
+    .booking-button {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #7a512d, #c79a52);
+      color: white;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 14px;
+      box-shadow: 0 12px 24px rgba(122, 81, 45, 0.25);
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .action {
+      background: #2b211b;
+      color: white;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 13px 8px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .action i {
+      font-size: 18px;
+      color: #d8b777;
+    }
+
+    .section {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 19px;
+      margin-bottom: 12px;
+      color: #2b211b;
+    }
+
+    .section p {
+      font-family: Arial, sans-serif;
+      color: #5f5148;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .info-box {
+      background: #f5ebdd;
+      border: 1px solid #ead6b8;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #4a3c33;
+      line-height: 1.45;
+    }
+
+    .info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-item i {
+      color: #8a5a2f;
+      width: 18px;
+      margin-top: 2px;
+    }
+
+    .amenities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .amenity {
+      background: #fff;
+      border: 1px solid #ead6b8;
+      padding: 13px 10px;
+      border-radius: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #4d4038;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .amenity i {
+      color: #8a5a2f;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 26px 0 20px;
+    }
+
+    .socials a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #2b211b;
+      color: #d8b777;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 18px;
+      border: 1px solid #d8b777;
+    }
+
+    .save-contact {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      background: #fff;
+      color: #2b211b;
+      padding: 14px;
+      border-radius: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      border: 1px solid #c79a52;
+      margin-bottom: 18px;
+    }
+
+    .footer {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #8a7566;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="hero">
+      <div class="logo-circle">VS</div>
+      <div class="tagline">Where Comfort Meets Convenience</div>
+      <h1>Vritavi Stays</h1>
+      <p>Luxury studio apartments in Noida for short stays, staycations, business trips, and peaceful getaways.</p>
+    </div>
+
+    <div class="content">
+      <div class="owner">Puneet Chaudhry</div>
+      <div class="role">Founder | Vritavi Stays</div>
+
+      <!-- Replace XXXXXXXXXX with your phone number -->
+      <a class="booking-button" href="https://wa.me/919990316331?text=Hi%20Vritavi%20Stays%2C%20I%20want%20to%20book%20a%20studio%20apartment." target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Book Your Stay on WhatsApp
+      </a>
+
+      <div class="quick-actions">
+        <a href="tel:+919990316331" class="action">
+          <i class="fa-solid fa-phone"></i>
+          Call
+        </a>
+        <a href="mailto:vritavistays@gmail.com" class="action">
+          <i class="fa-solid fa-envelope"></i>
+          Email
+        </a>
+        <a href="https://maps.google.com/?q=Sector%2094%20Noida%20Uttar%20Pradesh%20201313" target="_blank" class="action">
+          <i class="fa-solid fa-location-dot"></i>
+          Location
+        </a>
+      </div>
+
+      <div class="section">
+        <h2>About Vritavi Stays</h2>
+        <p>
+          Vritavi Stays offers premium, fully furnished studio apartments designed for comfort, privacy, and convenience. Each stay is thoughtfully prepared with modern interiors, cozy bedding, kitchen essentials, and a peaceful ambience.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Sector 94, Noida, Uttar Pradesh 201313, India</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9990316331</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>vritavistays@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Perfect For</h2>
+        <div class="amenities">
+          <div class="amenity"><i class="fa-solid fa-heart"></i> Couple Stays</div>
+          <div class="amenity"><i class="fa-solid fa-briefcase"></i> Business Trips</div>
+          <div class="amenity"><i class="fa-solid fa-mug-hot"></i> Staycations</div>
+          <div class="amenity"><i class="fa-solid fa-calendar-day"></i> Short Stays</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Amenities</h2>
+        <div class="amenities">
+          <div class="amenity"><i class="fa-solid fa-wifi"></i> High-Speed WiFi</div>
+          <div class="amenity"><i class="fa-solid fa-broom"></i> Housekeeping</div>
+          <div class="amenity"><i class="fa-solid fa-kitchen-set"></i> Kitchen Essentials</div>
+          <div class="amenity"><i class="fa-solid fa-shield-halved"></i> Secure Living</div>
+          <div class="amenity"><i class="fa-solid fa-car"></i> Parking</div>
+          <div class="amenity"><i class="fa-solid fa-snowflake"></i> Air Conditioning</div>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="https://instagram.com/vritavistays" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/vritavistays" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://vritavistays.com" target="_blank" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+        <a href="https://wa.me/919990316331" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <!-- Optional: replace # with a .vcf file link after creating your contact file -->
+      <a href="#" class="save-contact"><i class="fa-solid fa-address-card"></i> Save Contact</a>
+
+      <div class="footer">
+        © 2026 Vritavi Stays<br />Premium Studio Apartments | Noida
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
